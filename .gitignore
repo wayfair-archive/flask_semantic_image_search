@@ -1,0 +1,72 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Sphinx documentation
+docs/_build/
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+
+# MacOS X
+.DS_Store
+._*
+
+# Log files
+*.log
+
+# Pickles
+*.pkl
+
+# Databases
+*.db
+
+# Data file
+data/images
+
+# Tensorflow Serving models
+tensorflow_serving/models/*/

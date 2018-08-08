@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  flask_service:
+    build: .
+    restart: always
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./data:/app/data
+    entrypoint:
+      - gunicorn
+      - "flask_search.app:create_app()"
+      - --bind
+      - 0.0.0.0:9090
+      - --worker-class
+      - gevent
+      - --workers
+      - "2"
+      - --config
+      - flask_search/gunicorn_config.py
+      - --preload
+    depends_on:
+      - tensorflow_serving
+    environment:
+      FLASK_ENV: production
+
+  tensorflow_serving:
+    build: tensorflow_serving/.
+    restart: always
+    ports:
+      - "9091:9091"
+    volumes:
+      - ./tensorflow_serving:/app/tensorflow_serving
+    entrypoint:
+      - tensorflow_model_server
+      - --enable_batching
+      - --port=9091
+      - --model_config_file=/app/tensorflow_serving/model_config_file.txt
+
+networks:
+  default:

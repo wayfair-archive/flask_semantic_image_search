@@ -1,0 +1,12 @@
+{% from "_formhelpers.html" import render_field %}
+{% extends 'base.html' %}
+{% block content %}
+<form method="post" action="/search/image/" enctype="multipart/form-data">
+  <dl>
+    {{ render_field(form.image) }}
+    {{ render_field(form.rows) }}
+    {{ render_field(form.format) }}
+  </dl>
+  <p><input type="submit" value="Submit">
+</form>
+{% endblock %}

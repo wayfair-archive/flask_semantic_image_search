@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  flask_service:
+    volumes:
+      - .:/app
+    entrypoint:
+      - flask
+      - run
+    environment:
+      FLASK_ENV: development
+      FLASK_DEBUG: 1
+      FLASK_RUN_HOST: 0.0.0.0
+      FLASK_RUN_PORT: 9090
+      FLASK_APP: flask_search:create_app()

@@ -1,0 +1,7 @@
+model_config_list: {
+  config: {
+    name: "inception_resnet_v2",
+    base_path: "/app/tensorflow_serving/models/inception_resnet_v2",
+    model_platform: "tensorflow"
+  },
+}

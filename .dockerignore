@@ -1,0 +1,4 @@
+# Do not copy over data files, they can make the images huge
+# Mount these via the docker-compose file
+data/
+tensorflow_serving/models/
