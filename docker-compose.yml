@@ -3,7 +3,6 @@ version: '3'
 services:
   flask_service:
     build: .
-    restart: always
     ports:
       - "9090:9090"
     volumes:
@@ -27,7 +26,6 @@ services:
 
   tensorflow_serving:
     build: tensorflow_serving/.
-    restart: always
     ports:
       - "9091:9091"
     volumes:
